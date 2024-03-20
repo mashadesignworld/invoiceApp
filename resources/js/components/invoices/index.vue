@@ -1,6 +1,9 @@
 <script setup>
 
 import { onMounted, ref } from "vue"
+import { useRouter } from "vue-router"
+
+const router = useRouter()
 
 let invoices = ref([])
 let searchInvoice = ref([])
@@ -23,6 +26,12 @@ const search = async () => {
 }
 
 
+const newInvoice = async () => {
+    let form = await axios.get("/api/create_invoice")
+    console.log('form',form.data)
+    router.push('/invoice/new')
+}
+
 </script>
 
 <template>
@@ -34,7 +43,7 @@ const search = async () => {
                 <h2 class="invoice__title">Invoices</h2>
             </div>
             <div>
-                <a class="btn btn-secondary">
+                <a class="btn btn-secondary" @click="newInvoice">
                     New Invoice
                 </a>
             </div>
