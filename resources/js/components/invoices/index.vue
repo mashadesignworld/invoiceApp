@@ -32,6 +32,8 @@ const newInvoice = async () => {
     router.push('/invoice/new')
 }
 
+const
+
 </script>
 
 <template>

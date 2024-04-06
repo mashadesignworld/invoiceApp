@@ -35,3 +35,6 @@ Route::get('/customers', [CustomerController::class, 'all_customer']);
 
 
 Route::get('/products', [ProductController::class, 'all_product']);
+
+
+Route::post('/add_invoice', [InvoiceController::class, 'add_invoice']);
